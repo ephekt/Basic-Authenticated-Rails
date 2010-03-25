@@ -1,0 +1,66 @@
+body {
+  font: 12px Verdana,Helvetica,Arial,Geneva,sans-serif;
+  color: #1e1e1e;
+  margin: 0;
+  padding: 0;
+}
+#content {
+  padding: 0 0 0 0.5em;
+}
+#login {
+  width: 600px;
+  margin: 5px;
+}
+
+#body_container {
+  padding: 0 0 0 0.5em;
+}
+
+.clear { clear: both;  }
+.left  { float: left;  }
+.right { float: right; }
+.center {   text-align: center; }
+
+#top_nav {
+  background-color: #ECF1EF;  
+  padding: 0.05em 0em;
+}
+.logo {
+    color: #00688B;
+    font-family: Trebuchet MS;   
+}
+#login > .email, .password {
+  width: 15em;
+  border: 2px solid #ECF1EF;
+  background-color: #F5F5F5;
+  font-size: 20px;
+  padding: 2px;
+}
+
+.clear_both {
+  clear: both;
+}
+
+#top_nav > .links {
+  white-space:nowrap;
+  list-style-type:none;
+  padding: 0;
+  margin: 0.8em;
+}
+#top_nav > .links li { 
+  display:inline;
+}
+#top_nav > .links li a
+{
+  border: 1px solid #D4D4D4;   
+  padding:0.2em 0.5em;
+  background: #FFF; /* #FCF8DC */
+  text-decoration:underline;
+}
+#top_nav > .links li a:hover
+{
+  background: #08c;
+  color: #fff;
+  text-decoration:none;
+  border: 1px solid #FFF;     
+}

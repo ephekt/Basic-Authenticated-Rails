@@ -1,0 +1,21 @@
+<% content_for :on_ready do %>		
+		$('.password').showPassword('#checkbox');
+<% end %>
+<% content_for :javascript do %>
+<script type="text/javascript">
+  (function($){$.fn.extend({showPassword:function(f){return this.each(function(){var c=function(a){var a=$(a);var b=$("<input type='text' class='password' />");b.insertAfter(a).attr({'class':a.attr('class'),'style':a.attr('style')});return b};var d=function($this,$that){$that.val($this.val())};var e=function(){if($checkbox.is(':checked')){d($this,$clone);$clone.show();$this.hide()}else{d($clone,$this);$clone.hide();$this.show()}};var $clone=c(this),$this=$(this),$checkbox=$(f);$checkbox.click(function(){e()});$this.keyup(function(){d($this,$clone)});$clone.keyup(function(){d($clone,$this)});e()})}})})(jQuery);
+</script>
+<% end %>
+
+<div id="login">
+  <%= form.label :email %><br />
+  <% if form.object.new_record? %>
+    <%= form.text_field :email, :class => 'email' %>
+  <% else %>
+    <%= form.text_field :email, :class => 'email', :disabled => true %>  
+  <% end %>
+  <br />
+  <br />
+  <%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+  <%= form.password_field :password, :class => 'password' %><label><input id="checkbox" type="checkbox" /> Show password</label>
+</div>
