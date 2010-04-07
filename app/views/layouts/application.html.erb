@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta name="keywords" content="AnswerWise" />
-    <title>AnswerWise <%= controller.action_name %></title>
+    <meta name="keywords" content="basic authenticated ruby on rails" />
+    <title>Basic-Authenticated-Rails (<%= controller.action_name %>)</title>
     <%= stylesheet_link_tag 'scaffold','application' %>
     <%= yield :css %>
     <%= javascript_include_tag 'application', 'jquery-1.3.2.min' %>
@@ -18,21 +18,21 @@
   <body>
     <div id="top_nav">
       <ul class="links">
-        <li><%= link_to "Ask a Question", new_question_path %></li>
+        <li><span class="logo">Basic-Authenticated-Rails.</span></li>        
+        <li><%= link_to "Go To Front Page", root_url %></li>
         <% if !current_user %>
         <li><%= link_to "Log in", new_user_session_path %></li>        
         <li><%= link_to "Register", new_account_path %></li>
         <% else %>
-        <li><%= link_to "All Questions", questions_path %></li>        
         <li><%= link_to "My Account", account_path %></li>
         <li><%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %></li>
         <% end %>
-        <li><span class="logo">AnswerWise ~ Ask a question and get an answer.</span></li>
       </ul>
     </div>
+    <div style='display:<%= flash[:notice] ? 'block' : 'none' %>' id='flash_bar'>
+        <%= "Notice: #{flash[:notice]}" if flash[:notice] -%>
+    </div>    
     <div class="clear" />
-
-    <p style="color: green"><%= flash[:notice] %></p>
     <div id="content">
       <%= yield %>
     </div>
