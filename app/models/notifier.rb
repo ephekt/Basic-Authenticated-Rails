@@ -1,6 +1,4 @@
 class Notifier < ActionMailer::Base  
-  default_url_options[:host] = (Rails.env == "test" || Rails.env == "development") ? 'localhost:3000' : "answerwise.com"
-   
   def password_reset_instructions(user)  
     set_defaults
     subject "Password Reset Instructions"
